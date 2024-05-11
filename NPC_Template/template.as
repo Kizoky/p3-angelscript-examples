@@ -80,16 +80,19 @@ class Template_Example : IPostal3Script
 			// Don't forget removing the template flag before spawning the NPC in
 			pTemplateNPC.RemoveSpawnFlags(SF_NPC_TEMPLATE);
 			
+			// Note: We already parsed the entity BUT you can still override (key) values if you want to!
+			// This is not necessary, but if you want to spice up the randomness it's recommended to do it
+			//-------------------------------------------------------------------------------------------
 			// Randomize the behavior... if you want to of course
-			string randomBehavior = randomizeBH[RandomInt(0, randomizeBH.length()-1)];
+			//string randomBehavior = randomizeBH[RandomInt(0, randomizeBH.length()-1)];
 			
-			pTemplateNPC.KeyValue("FSMBehavior", randomBehavior);
+			//pTemplateNPC.KeyValue("FSMBehavior", randomBehavior);
 			
-			// Use st_init for Init state
-			pTemplateNPC.KeyValue("InitState", "st_init");
+			//pTemplateNPC.KeyValue("InitState", "st_init");
 			
 			// You can also add a custom name for entities if you want to clean them up later..
-			pTemplateNPC.SetName("template_cleanup");
+			//pTemplateNPC.SetName("template_cleanup");
+			//-------------------------------------------------------------------------------------------
 			
 			Spawn(pTemplateNPC);
 		}
